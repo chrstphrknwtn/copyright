@@ -1,0 +1,19 @@
+{
+  "name": "copyright",
+  "version": "0.0.1",
+  "description": "Mini-library for standards-compliant copyright notices that default to the current year.",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "repository": "chrstphrknwtn/copyright",
+  "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "2.4.0",
+    "xo": "0.25.3"
+  }
+}
