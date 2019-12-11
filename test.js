@@ -17,9 +17,9 @@ test('With name argument.', t => {
 
 test('With options object.', t => {
 	const tmp = copyright({
-		name: 'Christopher Newton',
 		startYear: 1981,
-		endYear: 2081
+		endYear: 2081,
+		name: 'Christopher Newton'
 	});
 
 	t.is(tmp, 'Copyright © 1981-2081 Christopher Newton');
@@ -40,4 +40,13 @@ test('With HTML entities option only.', t => {
 	});
 
 	t.is(tmp, `Copyright &copy; ${currentYear}`);
+});
+
+test('With short option only.', t => {
+	const currentYear = new Date().getFullYear();
+	const tmp = copyright({
+		short: true
+	});
+
+	t.is(tmp, `© ${currentYear}`);
 });

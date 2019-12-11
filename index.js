@@ -12,13 +12,13 @@ module.exports = (...args) => {
 	}
 
 	if (args.length === 1 && typeof args[0] === 'object') {
-		const {name, startYear, endYear, htmlEntities} = args[0];
+		const {name, startYear, endYear, htmlEntities, short} = args[0];
 
 		const symbol = htmlEntities ? '&copy;' : '©';
 		const startYearString = startYear ? `${startYear}-` : '';
 		const endYearString = endYear ? endYear : year;
 		const nameString = name ? ` ${name}` : '';
 
-		return `Copyright ${symbol} ${startYearString}${endYearString}${nameString}`;
+		return `${short ? '' : 'Copyright '}${symbol} ${startYearString}${endYearString}${nameString}`;
 	}
 };
