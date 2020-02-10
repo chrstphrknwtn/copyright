@@ -64,8 +64,7 @@ No options are required. If an empty options object is supplied the default noti
 copyright({
   name: 'Christopher Newton',
   startYear: 1981,
-  endYear: 2081,
-  trailingPeriod: true
+  endYear: 2081
 });
 ````
 ````
