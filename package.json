@@ -1,6 +1,6 @@
 {
   "name": "copyright",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mini-library for standards-compliant copyright notices that default to the current year.",
   "main": "index.js",
   "files": [
