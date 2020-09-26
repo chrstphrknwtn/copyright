@@ -1,21 +1,18 @@
 # Copyright
 
-Mini-library for standards-compliant copyright notices that default to the current year.
-
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
+Always up-to-date copyright notices.
 
 ## Install
 ````shell
 npm install copyright
 ````
 
+## Usage
 ````javascript
 const copyright = require('copyright');
 ````
 
-## Usage
-
-#### Default
+### Default
 ````javascript
 copyright();
 ````
@@ -23,7 +20,7 @@ copyright();
 Copyright © 2020
 ````
 
-#### With name argument (string)
+### With name
 
 ````javascript
 copyright('Christopher Newton');
@@ -32,7 +29,7 @@ copyright('Christopher Newton');
 Copyright © 2020 Christopher Newton
 ````
 
-#### With options (object)
+### With options
 
 ````javascript
 copyright({
@@ -46,19 +43,18 @@ Copyright © 1981-2081 Christopher Newton
 ````
 
 ## Options
-No options are required. If an empty options object is supplied the default notice is returned.
 
-| property          | type              | description                                                      |
-| -                 | -                 | -                                                                |
-| `name`            | String            | Name to be appended to the end of the copyright notice.          |
-| `endYear`         | String or Number  | Sets the current year, or end year for year range.               |
-| `startYear`       | String or Number  | Sets original publication date for a year range (eg. 1977-2020). |
-| `short`           | Boolean           | Omits the leading 'Copyright' word                               |
-| `htmlEntities`    | Boolean           | Escapes the copyright symbol; ie. © becomes `&copy;`             |
+| property        | type     | description                                               |
+| -               | -        | -                                                         |
+| `name`          | String   | Name to be appended to the copyright notice.              |
+| `endYear`       | Number   | Sets the year, or end year when used with `startYear`.    |
+| `startYear`     | Number   | Sets start year and yields a year range (eg. 1977-2020).  |
+| `short`         | Boolean  | Omits the leading 'Copyright' word                        |
+| `htmlEntities`  | Boolean  | Escapes the copyright symbol; ie. © becomes `&copy;`      |
 
-### Examples
+## Examples
 
-#### Name with start year and end year
+### Name with start year and end year
 
 ````javascript
 copyright({
@@ -71,7 +67,7 @@ copyright({
 Copyright © 1981-2081 Christopher Newton
 ````
 
-#### Short with name
+### Short with name
 
 ````javascript
 copyright({
@@ -83,7 +79,7 @@ copyright({
 © 2020 Christopher Newton
 ````
 
-#### Everything
+### Everything
 
 ````javascript
 copyright({

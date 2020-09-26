@@ -1,19 +1,56 @@
 {
-  "name": "copyright",
-  "version": "0.0.3",
-  "description": "Mini-library for standards-compliant copyright notices that default to the current year.",
-  "main": "index.js",
+  "version": "0.0.4",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "index.js"
+    "dist",
+    "src"
   ],
-  "scripts": {
-    "test": "ava --verbose"
+  "engines": {
+    "node": ">=10"
   },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "name": "copyright",
   "repository": "chrstphrknwtn/copyright",
   "author": "Christopher Newton (https://github.com/chrstphrknwtn)",
-  "license": "MIT",
+  "module": "dist/copyright-ts.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/copyright-ts.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/copyright-ts.esm.js",
+      "limit": "10 KB"
+    }
+  ],
   "devDependencies": {
-    "ava": "2.4.0",
-    "xo": "0.25.3"
+    "@size-limit/preset-small-lib": "^4.6.0",
+    "husky": "^4.3.0",
+    "size-limit": "^4.6.0",
+    "tsdx": "^0.14.0",
+    "tslib": "^2.0.1",
+    "typescript": "^4.0.3"
   }
 }
